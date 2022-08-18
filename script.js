@@ -1,6 +1,6 @@
 // Assignment code here
 // Set some variables
-var password = [];
+var password;
 var passwordLength;
 var userChoice;
 var incNumbers;
@@ -8,11 +8,13 @@ var incLowerCase;
 var incUpperCase;
 var incSpecialChars;
 var selections;
+
 // Password variables
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 chars = ['!', '@', '#', '$', '%', '^', '&', '*'];
+
 // Generate password function
 function generatePassword() {
   // Prompt user input
@@ -83,7 +85,7 @@ else if (incUpperCase) {
 else if (incSpecialChars) {
   userChoice = chars;
 }
-// Select from userChoice to create password
+// Select characters from userChoice to create password
 for (var i = 0; i < passwordLength; i++) {
   var selections = userChoice[Math.floor(Math.random() * userChoice.Length)];
   password.push(selections);
@@ -92,6 +94,7 @@ for (var i = 0; i < passwordLength; i++) {
 generatePassword();
 console.log(userChoice);
 console.log(passwordLength);
+console.log(password);
 
 
 // Get references to the #generate element
