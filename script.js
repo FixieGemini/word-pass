@@ -1,15 +1,17 @@
 // Assignment code here
 // Set some variables
+var password = [];
 var passwordLength;
 var userChoice;
 var incNumbers;
 var incLowerCase;
 var incUpperCase;
 var incSpecialChars;
+var selections;
 // Password variables
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-lowerAlpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-upperAlpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 chars = ['!', '@', '#', '$', '%', '^', '&', '*'];
 // Generate password function
 function generatePassword() {
@@ -34,56 +36,62 @@ if (!incNumbers && !incLowerCase && !incUpperCase && !incSpecialChars) {
 }
 // All 4 options
 else if (incNumbers && incLowerCase && incUpperCase && incSpecialChars) {
-  userChoice = numbers.concat(lowerAlpha, upperAlpha, chars);
+  userChoice = numbers.concat(lowercase, uppercase, chars);
 }
 // 3 options
 else if (incLowerCase && incUpperCase && incSpecialChars) {
-  userChoice = lowerAlpha.concat(upperAlpha, chars);
+  userChoice = lowercase.concat(uppercase, chars);
 }
 else if (incNumbers && incLowerCase && incUpperCase) {
-  userChoice = numbers.concat(lowerAlpha, upperAlpha);
+  userChoice = numbers.concat(lowercase, uppercase);
 }
 else if (incLowerCase && incUpperCase && incSpecialChars) {
-  userChoice = lowerAlpha.concat(upperAlpha, chars);
+  userChoice = lowercase.concat(uppercase, chars);
 }
 else if (incUpperCase && incNumbers && incSpecialChars){
-  userChoice = upperAlpha.concat(numbers, chars);
+  userChoice = uppercase.concat(numbers, chars);
 }
 // 2 options
 else if (incLowerCase && incUpperCase) {
-  userChoice = lowerAlpha.concat(upperAlpha);
+  userChoice = lowercase.concat(uppercase);
 }
 else if (incNumbers && incLowerCase) {
-  userChoice = numbers.concat(lowerAlpha);
+  userChoice = numbers.concat(lowercase);
 }
 else if (incNumbers && incUpperCase) {
-  userChoice = numbers.concat(upperAlpha);
+  userChoice = numbers.concat(uppercase);
 }
 else if (incNumbers && incSpecialChars) {
   userChoice = numbers.concat(chars);
 }
 else if (incSpecialChars && incLowerCase) {
-  userChoice = chars.concat(lowerAlpha);
+  userChoice = chars.concat(lowercase);
 }
 else if (incSpecialChars && incUpperCase) {
-  userChoice = chars.concat(upperAlpha);
+  userChoice = chars.concat(uppercase);
 }
 // 1 option
 else if (incNumbers) {
   userChoice = numbers;
 }
 else if (incLowerCase) {
-  userChoice = lowerAlpha;
+  userChoice = lowercase;
 }
 else if (incUpperCase) {
-  userChoice = upperAlpha;
+  userChoice = uppercase;
 }
 else if (incSpecialChars) {
   userChoice = chars;
 }
+// Select from userChoice to create password
+for (var i = 0; i < passwordLength; i++) {
+  var selections = userChoice[Math.floor(Math.random() * userChoice.Length)];
+  password.push(selections);
+}
 }
 generatePassword();
 console.log(userChoice);
+console.log(passwordLength);
 
 
 // Get references to the #generate element
