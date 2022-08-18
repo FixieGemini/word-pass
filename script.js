@@ -91,14 +91,14 @@ for (var i = 0; i < passwordLength; i++) {
   password.push(selections);
 }
 }
-generatePassword();
-console.log(userChoice);
-console.log(passwordLength);
-console.log(password);
 
+//generatePassword();
+//console.log(userChoice);
+//console.log(passwordLength);
+//console.log(password);
 
 // Get references to the #generate element
-/* var generateBtn = document.querySelector("#generate");
+ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
@@ -110,4 +110,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); */
+generateBtn.addEventListener("click", writePassword);
