@@ -90,12 +90,8 @@ for (var i = 0; i < passwordLength; i++) {
   var selections = userChoice[Math.floor(Math.random() * userChoice.length)];
   password.push(selections);
 }
+return password.join('');
 }
-
-//generatePassword();
-//console.log(userChoice);
-//console.log(passwordLength);
-//console.log(password);
 
 // Get references to the #generate element
  var generateBtn = document.querySelector("#generate");
@@ -105,6 +101,8 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+
+  
   passwordText.value = password;
 
 }
